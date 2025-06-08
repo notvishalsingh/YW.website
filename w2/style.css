@@ -1,0 +1,447 @@
+/* General body and section styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+  background: #111;
+  color: #e0e0e0;
+}
+
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
+  background: transparent;
+}
+
+/* Header */
+header {
+  background: #18181a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem 1rem 3rem;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  gap: 0.7rem;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  border: 2px solid #fff;
+}
+
+.ministry-name {
+  color: #b0b0b0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  background: #fff;
+  color: #18181a;
+}
+
+/* Banner Section */
+.banner {
+  position: relative;
+  width: 100%;
+  margin: 2rem 0 2.5rem 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18);
+  background: #222;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.banner img {
+  width: 100%;
+  height: 640px;
+  object-fit: contain;      /* Show the whole image */
+  display: block;
+  background: #18181a;      /* Fills space around image */
+  border-radius: 18px;
+  /* Remove filter: brightness(0.7); */
+}
+
+.banner h3 {
+  position: absolute;
+  left: 2rem;
+  bottom: 2.5rem;
+  margin: 0;
+  color: #fff;
+  background: rgba(0,0,0,0.55);
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.banner:not(:has(h3)) img {
+  border-radius: 18px;
+}
+
+.banner:not(:has(h3)) {
+  min-height: 320px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #fff;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin-top: 1rem;
+  background: #18181a;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+
+input,
+textarea,
+button {
+  padding: 0.75rem;
+  background-color: #232326;
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #b0b0b0;
+  background: #222;
+}
+
+button {
+  background-color: #fff;
+  color: #18181a;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #b0b0b0;
+  color: #18181a;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 80px 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-about {
+    padding-right: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.footer-logo h3 {
+    font-size: 1.3rem;
+    margin-bottom: 2px;
+}
+
+.footer-logo p {
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+.footer-about p {
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.footer-social a:hover {
+    background-color: var(--primary);
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-newsletter h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-links h4::after,
+.footer-contact h4::after,
+.footer-newsletter h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--gray);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.contact-item {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.contact-item i {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+.contact-item p {
+    color: var(--gray);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter-form button {
+    border-radius: 0 4px 4px 0;
+    padding: 10px 20px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.legal-links a {
+    color: var(--gray);
+    transition: color 0.3s;
+}
+
+.legal-links a:hover {
+    color: var(--white);
+}
+/* Spirit Yoga Section */
+.spirit-yoga {
+  padding: 50px 15px;
+  text-align: center;
+  background-color: #18181a;
+  border-radius: 18px;
+  margin-top: 2rem;
+}
+
+.spirit-yoga h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.spirit-yoga h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #b0b0b0;
+  margin: 15px auto;
+}
+
+/* Yoga Photos Grid */
+.yoga-photos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+.yoga-image-inline {
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  transition: transform 0.3s ease;
+}
+
+.yoga-image-inline:hover {
+  transform: scale(1.03);
+}
+
+.yoga-image-inline img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(42, 41, 41, 0.1);
+  border: 3px solid #232326;
+}
+
+.spirit-yoga p {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .banner img {
+    height: 220px;
+  }
+  .banner {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+
+  .banner img {
+    height: 160px;
+    object-fit: contain;
+  }
+
+  .banner {
+    min-height: 160px;
+  }
+  .yoga-photos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .yoga-image-inline {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .spirit-yoga h2 {
+    font-size: 2rem;
+  }
+  section {
+    padding: 1.5rem 0.5rem;
+  }
+}
