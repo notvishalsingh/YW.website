@@ -1,16 +1,31 @@
 /* General body and section styling */
+@font-face {
+  font-family: 'Denton';
+  src: url("./Denton-Font-Family/Denton Test Bold 700.otf") format('opentype');
+}
+
+html{
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
-  font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+  font-family: 'Denton','Segoe UI', 'Montserrat', Arial, sans-serif;
   background: #111;
   color: #e0e0e0;
 }
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+/* ...existing code... */
 
 section {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2.5rem 1rem;
   background: transparent;
+  font-family: 'Denton', 'Segoe UI', 'Montserrat', Arial, sans-serif;
 }
 
 /* Header */
@@ -54,6 +69,7 @@ nav ul {
   gap: 2rem;
   margin: 0;
   padding: 0;
+  font-family: 'Denton', 'Segoe UI', sans-serif;
 }
 
 nav a {
@@ -121,14 +137,14 @@ nav a:hover {
 /* Headings */
 h1, h2, h3 {
   color: #fff;
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-family: 'Denton', 'Montserrat', 'Segoe UI', sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 3.0rem;
+  margin-bottom: 0.4rem;
 }
 
 h2 {
@@ -141,6 +157,89 @@ h3 {
   font-size: 1.3rem;
 }
 
+.section-title {
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #b0b0b0;
+  margin: 15px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* animation for about us section */
+.about-animate {
+  color: #b0b0b0;
+  font-size: 1.45rem;
+  font-weight: 500;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.about-animate:hover,
+.about-animate:focus {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .about-animate {
+    font-size: 1.3rem;
+  }
+}
+
+/*font size of welcome section*/
+.max_font_size {
+  font-size: 1.7rem;
+  line-height: 1.6;
+}
+
+/*cred hover effect*/
+.welcome-cred-effect {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.7px;
+  text-align: center;
+  color: #b0b0b0;
+  opacity: 0.7;
+  transition: 
+    color 0.4s cubic-bezier(0.33, 0.81, 0.66, 0.95),
+    opacity 0.4s cubic-bezier(0.33, 0.81, 0.66, 0.95),
+    transform 0.4s cubic-bezier(0.33, 0.81, 0.66, 0.95);
+  cursor: default;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  will-change: opacity, transform;
+}
+
+.welcome-cred-effect:hover,
+.welcome-cred-effect:focus {
+  color: #fff;
+  opacity: 1;
+  transform: scale(1.025);
+}
+
+.wave-words span {
+  display: inline-block;
+  opacity: 0.7;
+  transform: translateY(20px);
+  transition:
+    opacity 0.4s cubic-bezier(0.33, 0.81, 0.66, 0.95),
+    transform 0.4s cubic-bezier(0.33, 0.81, 0.66, 0.95);
+}
+
+.wave-words:hover span,
+.wave-words:focus span {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Forms */
 form {
   display: flex;
