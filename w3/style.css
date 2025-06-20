@@ -193,6 +193,7 @@ h3 {
   }
 }
 
+<<<<<<< HEAD
 /*animation for join us section*/
 .join-animate{
   color: #b0b0b0;
@@ -213,6 +214,8 @@ h3 {
   }
 }
 
+=======
+>>>>>>> ac6f424 (added new font, font animation, space btw YW)
 /*font size of welcome section*/
 .max_font_size {
   font-size: 1.7rem;
