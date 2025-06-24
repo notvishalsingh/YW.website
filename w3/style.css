@@ -193,6 +193,26 @@ h3 {
   }
 }
 
+/*animation for join us section*/
+.join-animate{
+  color: #b0b0b0;
+  font-size: 1.45rem;
+  font-weight: 500;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.join-animate:hover,
+.join-animate:focus {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .join-animate {
+    font-size: 1.3rem;
+  }
+}
+
 /*font size of welcome section*/
 .max_font_size {
   font-size: 1.7rem;
@@ -243,10 +263,11 @@ h3 {
 /* Forms */
 form {
   display: flex;
+  text-align: center;
   flex-direction: column;
   gap: 1rem;
   max-width: 600px;
-  margin-top: 1rem;
+  margin: 1rem auto 0 auto;
   background: #18181a;
   padding: 2rem 1.5rem;
   border-radius: 12px;
