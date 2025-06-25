@@ -41,12 +41,7 @@ header {
   border: 2px solid #fff;
 }
 
-.ministry-name {
-  color: #b0b0b0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
+
 
 nav ul {
   list-style: none;
@@ -110,13 +105,7 @@ nav a:hover {
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
-.banner:not(:has(h3)) img {
-  border-radius: 18px;
-}
 
-.banner:not(:has(h3)) {
-  min-height: 320px;
-}
 
 /* Headings */
 h1, h2, h3 {
@@ -185,224 +174,238 @@ button:hover {
   color: #18181a;
 }
 
+
+
+
 /* Footer */
-.footer {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 80px 0 0;
+        .footer-container {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 60px 20px 30px;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: slideInFooter 1.2s cubic-bezier(.25,.8,.25,1) 0.5s both, fadeInSection 1s forwards 0.3s;
+        }
+
+        @keyframes slideInFooter {
+            from { opacity: 0; transform: translateY(60px);}
+            to { opacity: 1; transform: none;}
+        }
+
+        @keyframes fadeInSection {
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section {
+            padding: 15px;
+        }
+
+        .footer-section h3 {
+            color: #f5f7fa;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: white;
+        }
+        .footer-about p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .social-icons-footer {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon-footer {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2a2a2a;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .social-icon-footer:hover {
+            background-color: grey;
+            transform: translateY(-3px);
+            animation: bounce 0.5s;
+            color: #fff;
+        }
+        @keyframes bounce {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-8px);}
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
+        .contact-info {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .contact-info i {
+            color: white ;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-details {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .newsletter-form input {
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            background: #2a2a2a;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .newsletter-form input::placeholder {
+            color: #888;
+        }
+
+        .newsletter-form button {
+            background-color: grey;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .newsletter-form button:hover {
+            background-color: black;
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(26,58,108,0.15);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 25px;
+        }
+        .legal-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s, letter-spacing 0.3s;
+        }
+        .legal-links a:hover {
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        /* ...existing code... */
+
+/* --- Smooth zoom-in on hover for all images in .banner and .card-image --- */
+.banner img,
+.card-image img {
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1), box-shadow 0.4s;
 }
 
-.footer-about {
-    padding-right: 20px;
+.banner img:hover,
+.card-image img:hover {
+  transform: scale(1.07); /* Only zoom, no rotation */
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.footer-logo img {
-    height: 40px;
-    margin-right: 10px;
-}
-
-.footer-logo h3 {
-    font-size: 1.3rem;
-    margin-bottom: 2px;
-}
-
-.footer-logo p {
-    font-size: 0.8rem;
-    color: var(--gray);
-}
-
-.footer-about p {
-    color: var(--gray);
-    margin-bottom: 20px;
-}
-
-.footer-social {
-    display: flex;
-    gap: 15px;
-}
-
-.footer-social a {
-    width: 35px;
-    height: 35px;
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-}
-
-.footer-social a:hover {
-    background-color: var(--primary);
-}
-
-.footer-links h4,
-.footer-contact h4,
-.footer-newsletter h4 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-links h4::after,
-.footer-contact h4::after,
-.footer-newsletter h4::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background-color: var(--primary);
-}
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    color: var(--gray);
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: var(--white);
-}
-
-.contact-item {
-    display: flex;
-    margin-bottom: 15px;
-}
-
-.contact-item i {
-    margin-right: 10px;
-    color: var(--primary);
-}
-
-.contact-item p {
-    color: var(--gray);
-}
-
-.newsletter-form {
-    display: flex;
-    margin-top: 20px;
-}
-
-.newsletter-form input {
-    flex: 1;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px 0 0 4px;
-}
-
+/* --- Button hover animation --- */
+button,
 .newsletter-form button {
-    border-radius: 0 4px 4px 0;
-    padding: 10px 20px;
+  transition: background 0.4s, color 0.4s, transform 0.2s;
 }
-
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--gray);
-    font-size: 0.9rem;
-}
-
-.legal-links {
-    display: flex;
-    gap: 20px;
-}
-
-.legal-links a {
-    color: var(--gray);
-    transition: color 0.3s;
-}
-
-.legal-links a:hover {
-    color: var(--white);
-}
-/* Spirit Yoga Section */
-.spirit-yoga {
-  padding: 50px 15px;
-  text-align: center;
-  background-color: #18181a;
-  border-radius: 18px;
-  margin-top: 2rem;
-}
-
-.spirit-yoga h2 {
-  font-size: 2.5rem;
+button:hover,
+.newsletter-form button:hover {
+  background: #222;
   color: #fff;
-  margin-bottom: 30px;
-  position: relative;
+  transform: translateY(-2px) scale(1.05);
 }
 
-.spirit-yoga h2::after {
+/* --- Navigation underline animation --- */
+nav ul li a {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+}
+nav ul li a::after {
   content: '';
   display: block;
-  width: 80px;
-  height: 3px;
-  background: #b0b0b0;
-  margin: 15px auto;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
 }
-
-/* Yoga Photos Grid */
-.yoga-photos {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-  margin: 40px auto;
-  max-width: 1200px;
-}
-
-.yoga-image-inline {
-  flex: 1;
-  min-width: 300px;
-  max-width: 350px;
-  transition: transform 0.3s ease;
-}
-
-.yoga-image-inline:hover {
-  transform: scale(1.03);
-}
-
-.yoga-image-inline img {
+nav ul li a:hover::after {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(42, 41, 41, 0.1);
-  border: 3px solid #232326;
 }
 
-.spirit-yoga p {
-  max-width: 800px;
-  margin: 0 auto 30px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #e0e0e0;
+/* --- Logo text pop animation --- */
+.logo-text {
+  animation: logo-pop 1.2s cubic-bezier(.4,0,.2,1);
 }
+@keyframes logo-pop {
+  0% { opacity: 0; transform: scale(0.7);}
+  80% { opacity: 1; transform: scale(1.1);}
+  100% { opacity: 1; transform: scale(1);}
+}
+
+/* ...existing code... */
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+
+
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
@@ -443,5 +446,16 @@ button:hover {
   }
   section {
     padding: 1.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-image {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-image img {
+    width: 100%;
+    height: auto;
   }
 }
