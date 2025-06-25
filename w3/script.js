@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (para) {
     const words = para.textContent.split(" ");
     para.innerHTML = words.map((word, i) =>
-      <span style="transition-delay:${(i % 7) * 0.12}s">${word} </span>
+      `<span style="transition-delay:${(i % 7) * 0.12}s">${word} </span>`
     ).join(" ");
   }
 });
