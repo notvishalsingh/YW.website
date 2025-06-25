@@ -4,6 +4,14 @@
   src: url("./Denton-Font-Family/Denton Test Bold 700.otf") format('opentype');
 }
 
+:root {
+  --primary: #f1f1f1fc;  /* You can change this color if you want */
+  --gray: #b0b0b0;
+  --white: #fff;
+  --black: #111;
+}
+
+
 html{
   scroll-behavior: smooth;
 }
@@ -358,19 +366,25 @@ button:hover {
 }
 
 .footer-social a {
-    width: 35px;
-    height: 35px;
-    background-color: rgba(255,255,255,0.1);
+    width: 40px;
+    height: 40px;
+    background-color: #000;        /* black background */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s;
+    color: white;                  /* icon color */
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
 }
 
 .footer-social a:hover {
-    background-color: var(--primary);
+    background-color: var(--primary);  /* highlight color on hover */
+    color: #fff;
 }
+
 
 .footer-links h4,
 .footer-contact h4,
